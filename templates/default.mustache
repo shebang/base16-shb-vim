@@ -10,13 +10,11 @@
 "   let g:base16_shell_path=base16-builder/output/shell/
 if !has("gui_running")
   if exists("g:base16_shell_path")
-    execute "silent !/bin/sh ".g:base16_shell_path."/base16-{{scheme-slug}}.sh"
+    execute "silent !/bin/sh ".g:base16_shell_path."/base16ext-{{scheme-slug}}.sh"
   endif
 endif
 
 function! s:base16_color(color, default) abort
-  let source = g:base16_transform
-
   if !exists('g:base16_transform')
     return a:default
   endif
